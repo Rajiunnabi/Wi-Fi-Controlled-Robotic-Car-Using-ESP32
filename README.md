@@ -167,7 +167,7 @@ Install these libraries via **Sketch → Include Library → Manage Libraries**:
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/WiFi-Robot-Car.git
+git clone https://github.com/Rajiunnabi/Wi-Fi-Controlled-Robotic-Car-Using-ESP32.git
 cd WiFi-Robot-Car
 
 # Open the main sketch in Arduino IDE
