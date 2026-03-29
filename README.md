@@ -95,7 +95,7 @@ A core contribution of this work is the **persistent software-based safety inter
 | IN4 | 33 | Motor B direction |
 | ENB | 32 | Motor B speed (PWM) |
 
-**📸 Prototype Photos:** [Top View](images/prototype.jpg)
+**📸 Prototype Photos:** [Top View](images/prototype.jpeg)
 
 ---
 
@@ -123,8 +123,8 @@ s - Stop
 
 Example: "f,150" = Forward at speed
 
-### Web Interface
-![image alt](https://github.com/Rajiunnabi/Wi-Fi-Controlled-Robotic-Car-Using-ESP32/blob/583e3172929a2cf4d3b6681b040909b665511e5a/images/web_interface.jpeg)
+### Web Interface [View](images/web_interface.jpeg)
+
 
 ### Web Interface Features
 
