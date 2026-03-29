@@ -2,7 +2,6 @@
 
 [![Platform](https://img.shields.io/badge/platform-ESP32-blue)](https://www.espressif.com/en/products/socs/esp32)
 [![Framework](https://img.shields.io/badge/framework-Arduino-00979C)](https://www.arduino.cc/)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![IoT](https://img.shields.io/badge/IoT-Robotics-orange)](https://en.wikipedia.org/wiki/Internet_of_things)
 
 An ESP32-based WiFi controlled robotic car with responsive web interface, real-time speed control, and a **persistent software safety interlock mechanism** that provides a verifiable safe state for physical interaction.
