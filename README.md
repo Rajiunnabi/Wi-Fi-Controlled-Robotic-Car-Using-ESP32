@@ -66,4 +66,5 @@ A core contribution of this work is the **persistent software-based safety inter
 
 ## 🎬 Demonstration
 
-### Web Interface(images/web_interface.png)
+### Web Interface
+![image alt](https://github.com/Rajiunnabi/Wi-Fi-Controlled-Robotic-Car-Using-ESP32/blob/583e3172929a2cf4d3b6681b040909b665511e5a/images/web_interface.jpeg)
