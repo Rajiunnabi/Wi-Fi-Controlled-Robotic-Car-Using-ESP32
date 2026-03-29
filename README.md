@@ -66,5 +66,110 @@ A core contribution of this work is the **persistent software-based safety inter
 
 ## 🎬 Demonstration
 
+
+
+
+**📸 System Diagrams:** [System Architecture](images/system_architecture.png) | [State Machine](images/state_machine.png)
+
+---
+
+## 🔧 Hardware Components
+
+| Component | Specification | Purpose |
+|-----------|---------------|---------|
+| **ESP32 Dev Board** | 240 MHz, 520 KB SRAM | Main microcontroller, WiFi AP, web server |
+| **L298N Motor Driver** | Dual H-bridge, 5-12V | Motor direction and speed control |
+| **7V Li-ion Battery** | 2S, 7.4V nominal | Power source |
+| **4x DC Gear Motors** | 3-6V, 100-200 RPM | Wheel actuation |
+| **Foamboard Chassis** | 25cm x 20cm | Structural base |
+| **Jumper Wires** | Male-female | Electrical connections |
+
+### Pin Mapping
+
+| Motor Driver Pin | ESP32 GPIO | Function |
+|-----------------|------------|----------|
+| IN1 | 27 | Motor A direction |
+| IN2 | 26 | Motor A direction |
+| ENA | 14 | Motor A speed (PWM) |
+| IN3 | 25 | Motor B direction |
+| IN4 | 33 | Motor B direction |
+| ENB | 32 | Motor B speed (PWM) |
+
+**📸 Prototype Photos:** [Top View](images/prototype.jpg)
+
+---
+
+## 💻 Software Stack
+
+### Communication Layer (HTTP Server)
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/` | GET | Serves web control interface |
+| `/command?cmd=<dir>,<speed>` | GET | Movement command (e.g., `f,150`) |
+| `/toggleStop` | POST | Toggles safety interlock |
+| `/getStopStatus` | GET | Returns current lock state |
+| `/speed?value=<0-255>` | GET | Sets motor speed |
+
+### Command Format
+Format: <direction>,<speed>
+
+Directions:
+f - Forward
+b - Backward
+l - Left turn
+r - Right turn
+s - Stop
+
+Example: "f,150" = Forward at speed
+
 ### Web Interface
 ![image alt](https://github.com/Rajiunnabi/Wi-Fi-Controlled-Robotic-Car-Using-ESP32/blob/583e3172929a2cf4d3b6681b040909b665511e5a/images/web_interface.jpeg)
+
+### Web Interface Features
+
+- Responsive design (mobile/desktop)
+- Touch and mouse support
+- Keyboard controls (Arrow keys + WASD)
+- Real-time speed slider
+- Command log for debugging
+- Visual safety state indication
+
+---
+
+## 🚀 Installation and Setup
+
+### Prerequisites
+
+- [Arduino IDE](https://www.arduino.cc/en/software) (version 2.0 or higher)
+- ESP32 board package installed
+- USB cable for programming
+
+### Step 1: Install ESP32 Board Package
+
+1. Open Arduino IDE
+2. Go to **File → Preferences**
+3. Add this URL to "Additional Board Manager URLs":https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+4. Go to **Tools → Board → Boards Manager**
+5. Search for "ESP32" and install
+
+### Step 2: Install Required Libraries
+
+Install these libraries via **Sketch → Include Library → Manage Libraries**:
+
+| Library | Purpose |
+|---------|---------|
+| `WiFi.h` | Built-in - WiFi connectivity |
+| `WebServer.h` | Built-in - HTTP server |
+| `AsyncUDP.h` | Built-in - UDP support |
+
+### Step 3: Clone and Upload
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/WiFi-Robot-Car.git
+cd WiFi-Robot-Car
+
+# Open the main sketch in Arduino IDE
+open src/Freebot_V1.ino
+
